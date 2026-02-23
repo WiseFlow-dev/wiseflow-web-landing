@@ -862,6 +862,25 @@ const WaitlistModal = ({ onClose }) => {
 function App() {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
 
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    const hash = window.location.hash;
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ block: 'start' });
+      }
+    });
+  }, []);
+
   return (
     <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain">
       <Navbar onOpenWaitlist={() => setIsWaitlistModalOpen(true)} />
