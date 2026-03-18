@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Wallet, PieChart, MessageSquareText, TrendingUp, CalendarDays, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Wallet, PieChart, MessageSquareText, TrendingUp, CalendarDays, ArrowRight, ShieldCheck, Zap, XCircle, CheckCircle2, Trophy, Users, Activity, Sparkles } from 'lucide-react';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -70,15 +70,15 @@ const Hero = ({ onOpenWaitlist }) => {
       <div className="relative z-10 max-w-4xl flex flex-col items-center">
         <div className="hero-pill mb-8 flex items-center gap-2 bg-surfaceVariant border border-surfaceBorder px-4 py-2 rounded-full backdrop-blur-md">
           <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
-          <span className="font-heading text-xs font-semibold tracking-wide text-textSub uppercase">Your Automated Financial Companion</span>
+          <span className="font-heading text-[10px] sm:text-xs font-semibold tracking-wide text-textSub uppercase">Your AI Financial Companion</span>
         </div>
 
-        <h1 className="hero-line font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6 text-textMain leading-[1.1] md:leading-tight text-balance">
-          Let Wisey automate your finances and <span className="text-primary">coach you</span> in plain English.
+        <h1 className="hero-line font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6 text-textMain leading-[1.1] md:leading-tight text-balance">
+          Stop feeling guilty about money. Meet WiseFlow, your <span className="text-primary">companion.</span>
         </h1>
 
-        <p className="hero-line font-heading text-textSub mt-4 mb-10 max-w-2xl text-lg md:text-xl leading-relaxed text-balance">
-          Most finance apps show you charts. WiseFlow&apos;s AI companion, Wisey, automates the hard work and explains everything in plain language — then coaches you toward better habits. Built for Android.
+        <p className="hero-line font-heading text-textSub mt-4 mb-10 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-balance px-2 sm:px-0">
+          Your intelligent financial companion that calculates your true Freedom Number, provides proactive daily advice, and turns building wealth into a rewarding game. Android Exclusive.
         </p>
 
         <div className="hero-line flex flex-col sm:flex-row gap-4">
@@ -98,63 +98,104 @@ const Hero = ({ onOpenWaitlist }) => {
 // ==========================================
 // C. REAL APP FEATURES MOCK-UI
 // ==========================================
+// ==========================================
+// C1. OLD WAY VS NEW WAY (Comparison)
+// ==========================================
+const ComparisonSection = () => {
+  return (
+    <section className="py-12 sm:py-20 px-4 sm:px-6 md:px-16 bg-background relative z-10">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10">
+        <div className="flex-1 bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 opacity-80 backdrop-blur-sm">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-surfaceBorder/50">
+            <XCircle className="w-6 h-6 text-secondary" />
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-textMain">Traditional Apps</h3>
+          </div>
+          <ul className="space-y-4 font-heading text-sm sm:text-base text-textSub">
+            <li>• Arbitrary "$500" budgets that make you feel guilty.</li>
+            <li>• Punishing red bars when you go over.</li>
+            <li>• Generic "You spent money!" alerts without solutions.</li>
+            <li>• Stressful spreadsheets & heavy pie charts.</li>
+          </ul>
+        </div>
+        
+        <div className="flex-1 bg-[#12141C] border border-primary/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-[0_0_40px_-15px_rgba(34,197,94,0.15)]">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-primary/20 relative z-10">
+            <CheckCircle2 className="w-6 h-6 text-primary" />
+            <h3 className="font-heading font-bold text-lg sm:text-xl text-textMain">The WiseFlow Way</h3>
+          </div>
+          <ul className="space-y-4 font-heading text-sm sm:text-base text-textSub relative z-10">
+            <li><span className="text-primary font-bold">• Freedom Number:</span> Know your Daily Safe Spend exactly.</li>
+            <li><span className="text-primary font-bold">• Unbiased Companion:</span> Wisey adapts, no guilt-trips.</li>
+            <li><span className="text-primary font-bold">• Gamification:</span> Level up your real-life finances with XP.</li>
+            <li><span className="text-primary font-bold">• Anti-Boxy UX:</span> Premium, gorgeous, anxiety-free design.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ==========================================
+// C2. REAL APP FEATURES
+// ==========================================
 const Features = () => {
   return (
-    <section id="features" className="py-24 px-6 md:px-16 border-t border-surfaceBorder bg-background relative z-10">
+    <section id="features" className="py-20 sm:py-24 px-4 sm:px-6 md:px-16 border-t border-surfaceBorder bg-background relative z-10">
       <div className="max-w-6xl mx-auto">
 
-        <div className="mb-16 md:mb-24 text-center">
-          <h2 className="font-heading font-bold text-3xl md:text-5xl mb-4 text-textMain tracking-tight">Automated intelligence, not manual tracking.</h2>
-          <p className="font-heading text-textSub text-lg md:text-xl max-w-2xl mx-auto text-balance">Because manually categorizing transactions rarely changes behavior. WiseFlow automates the boring stuff so you can focus on decisions.</p>
+        <div className="mb-16 md:mb-24 text-center px-2">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl mb-4 text-textMain tracking-tight">Behavioral psychology, not just numbers.</h2>
+          <p className="font-heading text-textSub text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-balance">Because auto-categorizing transactions rarely changes behavior. WiseFlow replaces mental math with clear answers and gamified habits.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
 
-          {/* 1. Budgets & Wallets Tool */}
-          <div className="bg-surface border border-surfaceBorder rounded-3xl p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
+          {/* 1. Daily Safe Spend */}
+          <div className="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                <Wallet className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                <Sparkles className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-textMain mb-3">Auto-Organized Budgets</h3>
-              <p className="font-heading text-textSub leading-relaxed md:text-lg">Wisey automatically categorizes your transactions and allocates funds across wallets. No manual entry — just organized budgets that update themselves.</p>
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-textMain mb-3">Your Daily Safe Spend</h3>
+              <p className="font-heading text-textSub text-sm sm:text-base leading-relaxed">No more guessing your budget. Wisey analyzes your history, subtracts your fixed obligations, and tells you exactly what you can safely spend today.</p>
             </div>
           </div>
 
-          {/* 2. Analytical Insights */}
-          <div className="bg-surface border border-surfaceBorder rounded-3xl p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-info/5 rounded-full blur-3xl group-hover:bg-info/10 transition-colors duration-500"></div>
-            <div className="relative z-10">
-              <div className="w-12 h-12 bg-info/10 rounded-2xl flex items-center justify-center mb-6">
-                <PieChart className="w-6 h-6 text-info" />
-              </div>
-              <h3 className="font-heading font-bold text-2xl text-textMain mb-3">Insights in Plain English</h3>
-              <p className="font-heading text-textSub leading-relaxed md:text-lg">No deciphering charts. Wisey explains your spending patterns in clear sentences — and tells you what to do about it.</p>
-            </div>
-          </div>
-
-          {/* 3. Planned Payments */}
-          <div className="bg-surface border border-surfaceBorder rounded-3xl p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
+          {/* 2. Gamified XP System */}
+          <div className="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl group-hover:bg-gold/10 transition-colors duration-500"></div>
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
-                <CalendarDays className="w-6 h-6 text-gold" />
+              <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                <Trophy className="w-6 h-6 text-gold" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-textMain mb-3">Auto-Tracked Bills & Subscriptions</h3>
-              <p className="font-heading text-textSub leading-relaxed md:text-lg">Wisey detects recurring payments automatically and reminds you before they hit. No more surprises — just a clear view of what&apos;s coming up.</p>
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-textMain mb-3">Level Up Your Finances</h3>
+              <p className="font-heading text-textSub text-sm sm:text-base leading-relaxed">Finance is usually punishing — WiseFlow makes it rewarding. Earn XP, build streaks in your Money Mood Calendar, and turn real-life savings into a satisfying game.</p>
             </div>
           </div>
 
-          {/* 4. Spending Insights */}
-          <div className="bg-surface border border-surfaceBorder rounded-3xl p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
+          {/* 3. Peer Comparison */}
+          <div className="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-info/5 rounded-full blur-3xl group-hover:bg-info/10 transition-colors duration-500"></div>
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-info/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                <Users className="w-6 h-6 text-info" />
+              </div>
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-textMain mb-3">Am I Doing Okay?</h3>
+              <p className="font-heading text-textSub text-sm sm:text-base leading-relaxed">Replace financial isolation with healthy benchmarks. See how your savings rate and spending control stack up anonymously against peers in your income bracket.</p>
+            </div>
+          </div>
+
+          {/* 4. Habit Heatmap */}
+          <div className="bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 flex flex-col group relative overflow-hidden transition-colors hover:bg-surfaceVariant/50">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple/5 rounded-full blur-3xl group-hover:bg-purple/10 transition-colors duration-500"></div>
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-purple/10 rounded-2xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-6 h-6 text-purple" />
+              <div className="w-12 h-12 bg-purple/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-6">
+                <Activity className="w-6 h-6 text-purple" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-textMain mb-3">Proactive Coaching Alerts</h3>
-              <p className="font-heading text-textSub leading-relaxed md:text-lg">Wisey doesn&apos;t wait for you to check. It proactively nudges you when spending drifts, savings goals are at risk, or opportunities arise — like a coach in your pocket.</p>
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-textMain mb-3">The Habit Heatmap</h3>
+              <p className="font-heading text-textSub text-sm sm:text-base leading-relaxed">Wisey goes beyond showing what you bought. We expose when you are vulnerable to impulse spending (like Friday nights at 9 PM) so you can proactively break bad habits.</p>
             </div>
           </div>
 
@@ -170,7 +211,7 @@ const Pricing = () => {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="font-heading font-bold text-3xl md:text-5xl mb-4 text-textMain tracking-tight">Pricing</h2>
-          <p className="font-heading text-textSub text-lg md:text-xl max-w-2xl mx-auto text-balance">Simple pricing for Android users who want automated insights and coaching.</p>
+          <p className="font-heading text-textSub text-lg md:text-xl max-w-2xl mx-auto text-balance">Simple pricing for Android users who want automated insights and guidance.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
@@ -179,7 +220,7 @@ const Pricing = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 font-heading text-textSub">
               <div className="flex items-start gap-3">
                 <span className="text-primary font-bold">•</span>
-                <span>Wisey chat (companion + coach mode)</span>
+                <span>Wisey chat (companion mode)</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-primary font-bold">•</span>
@@ -212,17 +253,26 @@ const Pricing = () => {
             </div>
           </div>
 
-          <div className="bg-surface border border-surfaceBorder rounded-3xl p-8">
-            <div className="flex flex-col gap-5">
+          <div className="bg-surface border border-primary/30 rounded-3xl p-8 relative overflow-hidden shadow-[0_0_30px_-15px_rgba(34,197,94,0.15)]">
+            <div className="absolute top-0 right-0 bg-primary text-background font-heading font-bold text-[10px] uppercase tracking-wider px-4 py-1.5 rounded-bl-xl">
+              Launch Promo
+            </div>
+
+            <div className="flex flex-col gap-6 pt-2">
               <div className="flex flex-col gap-1">
-                <div className="font-heading font-bold text-textMain">Monthly</div>
-                <div className="font-heading font-extrabold text-4xl text-textMain">$8<span className="text-textSub text-base font-semibold">/mo</span></div>
+                <div className="flex items-center gap-2">
+                  <div className="font-heading font-bold text-textMain">Monthly</div>
+                  <span className="text-[10px] text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider">First Month</span>
+                </div>
+                <div className="font-heading font-extrabold text-4xl text-textMain">$4.99<span className="text-textSub text-base font-semibold">/mo</span></div>
               </div>
+
+              <div className="w-full h-px bg-surfaceBorder/50"></div>
 
               <div className="flex flex-col gap-1">
                 <div className="font-heading font-bold text-textMain">Yearly</div>
-                <div className="font-heading font-extrabold text-4xl text-textMain">$80<span className="text-textSub text-base font-semibold">/yr</span></div>
-                <div className="font-heading text-textSub text-sm">Save 2 months vs monthly.</div>
+                <div className="font-heading font-extrabold text-4xl text-textMain">$49.99<span className="text-textSub text-base font-semibold">/yr</span></div>
+                <div className="font-heading text-textSub text-sm mt-1">Lock in the launch rate.</div>
               </div>
             </div>
           </div>
@@ -248,7 +298,7 @@ const SecuritySection = () => {
           </div>
           <div className="bg-surface border border-surfaceBorder rounded-3xl p-8">
             <h3 className="font-heading font-bold text-xl text-textMain mb-2">Minimal access</h3>
-            <p className="font-heading text-textSub leading-relaxed">We only request the permissions needed to deliver automated insights and coaching.</p>
+            <p className="font-heading text-textSub leading-relaxed">We only request the permissions needed to deliver automated insights and guidance.</p>
           </div>
           <div className="bg-surface border border-surfaceBorder rounded-3xl p-8">
             <h3 className="font-heading font-bold text-xl text-textMain mb-2">Secure foundations</h3>
@@ -271,12 +321,12 @@ const LegalAndSupport = () => {
 
         <div id="terms" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
           <h2 className="font-heading font-bold text-2xl text-textMain mb-3">Terms of Service</h2>
-          <p className="font-heading text-textSub leading-relaxed">WiseFlow is in development. Final terms will be available before launch. Wisey provides guidance and coaching, but it&apos;s not a substitute for professional financial advice.</p>
+          <p className="font-heading text-textSub leading-relaxed">WiseFlow is in development. Final terms will be available before launch. Wisey provides guidance, but it&apos;s not a substitute for professional financial advice.</p>
         </div>
 
         <div id="support" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
           <h2 className="font-heading font-bold text-2xl text-textMain mb-3">Support</h2>
-          <p className="font-heading text-textSub leading-relaxed">Need help or want to share feedback? Join the waitlist and reply to the confirmation email when we reach out—your feedback will directly shape Wisey&apos;s coaching.</p>
+          <p className="font-heading text-textSub leading-relaxed">Need help or want to share feedback? Join the waitlist and reply to the confirmation email when we reach out—your feedback will directly shape Wisey&apos;s guidance.</p>
         </div>
       </div>
     </section>
@@ -588,18 +638,18 @@ const AiWisey = () => {
 
       <div className="flex-1 max-w-xl relative z-10">
         <div className="bg-info/10 border border-info/20 text-info px-4 py-1.5 rounded-full inline-flex font-heading font-bold text-xs uppercase tracking-widest mb-6">
-          AI Companion & Coach
+          AI Companion
         </div>
         <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-textMain tracking-tight leading-tight text-balance">
-          Meet <span className="text-info">Wisey.</span><br />Your AI companion & coach.
+          Meet <span className="text-info">Wisey.</span><br />Your AI Companion.
         </h2>
         <p className="font-heading text-textSub text-lg leading-relaxed mb-8 text-balance">
-          Wisey is your always-on financial companion. It automates budget tracking, explains your money in plain language, and proactively coaches you toward better habits — like a patient friend who happens to be a finance expert.
+          Wisey is your always-on financial companion. It automates budget tracking, explains your money in plain language, and proactively guides you toward better habits — like a patient friend who happens to be a finance expert.
         </p>
         <ul className="space-y-4 font-heading text-textMain">
           <li className="flex items-center gap-3"><ShieldCheck className="w-5 h-5 text-info" /> Total privacy, no data leasing.</li>
           <li className="flex items-center gap-3"><Zap className="w-5 h-5 text-info" /> Automates the boring stuff so you focus on decisions.</li>
-          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-info" /> Coaches you in plain English, not jargon.</li>
+          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-info" /> Guides you in plain English, not jargon.</li>
         </ul>
       </div>
 
@@ -700,7 +750,7 @@ const Footer = () => {
             </div>
           </div>
           <p className="font-heading text-textSub text-sm leading-relaxed mb-6">
-            Your automated financial companion. Wisey handles the tracking, analysis, and coaching — you just make the decisions. Built for Android.
+            Your automated financial companion. Wisey handles the tracking, analysis, and guidance — you just make the decisions. Built for Android.
           </p>
           <div className="flex items-center gap-2 bg-surfaceVariant w-max px-3 py-1.5 rounded-full border border-surfaceBorder">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
@@ -742,7 +792,7 @@ const WaitlistModal = ({ onClose }) => {
     if (name && email) {
       setIsSubmitting(true);
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwrtbBnnonHf4mgKCqfT1UOtNqWJvgpdyPa1SrVoPvpBdWaRYDQ8H5-Zn6CV1TWe2py/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxYMa-2SHEmL3mDR0Lh6fqMDWGfzDciYnJRIeeK7lDAg9rfkXiT9JSh_xf5eWk1BP8P/exec';
       try {
         const iframeName = `waitlist_iframe_${Date.now()}`;
 
@@ -882,9 +932,10 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain">
+    <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain overflow-x-hidden">
       <Navbar onOpenWaitlist={() => setIsWaitlistModalOpen(true)} />
       <Hero onOpenWaitlist={() => setIsWaitlistModalOpen(true)} />
+      <ComparisonSection />
       <Features />
       <AiWisey />
       <Pricing />
