@@ -271,7 +271,10 @@ const Pricing = () => {
 
               <div className="flex flex-col gap-1">
                 <div className="font-heading font-bold text-textMain">Yearly</div>
-                <div className="font-heading font-extrabold text-4xl text-textMain">$49.99<span className="text-textSub text-base font-semibold">/yr</span></div>
+                <div className="flex items-baseline gap-2">
+                  <div className="font-heading font-extrabold text-4xl text-textMain">$49.99<span className="text-textSub text-base font-semibold">/yr</span></div>
+                  <span className="text-primary font-heading font-semibold text-sm">(Save $9.89)</span>
+                </div>
                 <div className="font-heading text-textSub text-sm mt-1">Lock in the launch rate.</div>
               </div>
             </div>
@@ -548,6 +551,30 @@ const AffordCheckCard = ({ data, onSimulate }) => {
   );
 };
 
+const WiseyOwlAvatar = ({ className = "w-5 h-5" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Owl body */}
+    <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" fill="currentColor" fillOpacity="0.9"/>
+    
+    {/* Ear tufts */}
+    <path d="M8 6L7 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M16 6L17 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    
+    {/* Eyes */}
+    <circle cx="9.5" cy="12" r="2.5" fill="white"/>
+    <circle cx="14.5" cy="12" r="2.5" fill="white"/>
+    <circle cx="9.5" cy="12" r="1.2" fill="#1a1a1a"/>
+    <circle cx="14.5" cy="12" r="1.2" fill="#1a1a1a"/>
+    
+    {/* Beak */}
+    <path d="M12 14L10.5 16L12 15.5L13.5 16L12 14Z" fill="#FFA500"/>
+    
+    {/* Wings */}
+    <path d="M6 13C6 13 5 14 5 15.5C5 17 6 17.5 6 17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+    <path d="M18 13C18 13 19 14 19 15.5C19 17 18 17.5 18 17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+  </svg>
+);
+
 const AiWisey = () => {
   const [showAffordDialog, setShowAffordDialog] = useState(false);
   const [messages, setMessages] = useState([
@@ -661,7 +688,7 @@ const AiWisey = () => {
           <div className="flex items-center justify-between border-b border-surfaceBorder/50 pb-4 px-2 relative z-10">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-info flex items-center justify-center shadow-[0_0_15px_rgba(84,160,255,0.4)]">
-                <MessageSquareText className="w-5 h-5 text-background" />
+                <WiseyOwlAvatar className="w-5 h-5 text-background" />
               </div>
               <div>
                 <div className="font-heading font-bold text-textMain text-sm">Wisey</div>
@@ -678,7 +705,7 @@ const AiWisey = () => {
               <div key={msg.id} className={`flex w-full ${msg.fromUser ? 'justify-end' : 'justify-start'}`}>
                 {!msg.fromUser && msg.type !== 'text' && (
                   <div className="w-8 h-8 rounded-full bg-surfaceVariant border border-surfaceBorder flex items-center justify-center mr-3 mt-1 shrink-0">
-                    <MessageSquareText className="w-4 h-4 text-white" />
+                    <WiseyOwlAvatar className="w-4 h-4 text-white" />
                   </div>
                 )}
                 {msg.type === "text" ? (
