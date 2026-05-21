@@ -319,17 +319,40 @@ const LegalAndSupport = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div id="privacy" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
           <h2 className="font-heading font-bold text-2xl text-textMain mb-3">Privacy Policy</h2>
-          <p className="font-heading text-textSub leading-relaxed">We&apos;re building WiseFlow with privacy-first principles. The full policy will be published before launch. In the meantime: we don&apos;t sell your data, and we design Wisey to help you—not to monetize you.</p>
+          <div className="font-heading text-textSub leading-relaxed space-y-3">
+            <p>WiseFlow is designed with privacy-first defaults. We do not sell or lease personal data.</p>
+            <p>We collect only the data needed to provide the service: account profile data, app usage metadata, user-entered financial records, and connected-bank transaction data when you explicitly link an account.</p>
+            <p>
+              Data retention and deletion:
+              <br />- Data is retained while your account is active.
+              <br />- If your account is inactive for 24 months, non-required personal data may be anonymized.
+              <br />- After an account deletion request, we target deletion or de-identification of personal data within 30 days, except where retention is legally required.
+              <br />- Limited security, fraud, dispute, and compliance records may be retained up to 180 days after deletion.
+              <br />- Encrypted backup/audit copies may persist up to 90 days before automatic removal.
+              <br />- This policy is reviewed at least every 12 months.
+            </p>
+            <p>Last updated: May 2026 (Version 1.2).</p>
+          </div>
         </div>
 
         <div id="terms" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
           <h2 className="font-heading font-bold text-2xl text-textMain mb-3">Terms of Service</h2>
-          <p className="font-heading text-textSub leading-relaxed">WiseFlow is in development. Final terms will be available before launch. Wisey provides guidance, but it&apos;s not a substitute for professional financial advice.</p>
+          <div className="font-heading text-textSub leading-relaxed space-y-3">
+            <p>WiseFlow is a personal finance management application. It is not a bank, lender, broker, investment advisor, tax advisor, or legal advisor.</p>
+            <p>AI outputs (including Wisey guidance, suggestions, and categorization) are informational only and do not replace professional advice.</p>
+            <p>You are responsible for maintaining account security, reviewing linked-account activity, and keeping your login credentials private.</p>
+            <p>Bank connections use approved third-party providers and can be disconnected by you at any time.</p>
+            <p>If an account is terminated, access may be removed and non-required data may be deleted or de-identified according to the Privacy Policy retention schedule.</p>
+          </div>
         </div>
 
         <div id="support" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
           <h2 className="font-heading font-bold text-2xl text-textMain mb-3">Support</h2>
-          <p className="font-heading text-textSub leading-relaxed">Need help or want to share feedback? Join the waitlist and reply to the confirmation email when we reach out—your feedback will directly shape Wisey&apos;s guidance.</p>
+          <div className="font-heading text-textSub leading-relaxed space-y-3">
+            <p>Need help with account security, data privacy, or app support?</p>
+            <p>Contact: <a className="text-primary hover:underline" href="mailto:motomation.co@gmail.com">motomation.co@gmail.com</a></p>
+            <p>For privacy or deletion requests, include your account email and request details so we can process your request quickly.</p>
+          </div>
         </div>
       </div>
     </section>
