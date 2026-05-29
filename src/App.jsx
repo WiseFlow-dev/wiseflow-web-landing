@@ -74,11 +74,11 @@ const Hero = ({ onOpenWaitlist }) => {
         </div>
 
         <h1 className="hero-line font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter mb-6 text-textMain leading-[1.1] md:leading-tight text-balance">
-          Stop feeling guilty about money. Meet WiseFlow, your <span className="text-primary">companion.</span>
+          Financial intelligence, <span className="text-primary">built into your day.</span>
         </h1>
 
         <p className="hero-line font-heading text-textSub mt-4 mb-10 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-balance px-2 sm:px-0">
-          Your intelligent financial companion that calculates your true Freedom Number, provides proactive daily advice, and turns building wealth into a rewarding game. Android Exclusive.
+          WiseFlow is your AI-powered money companion — real-time insights, a daily budget that adapts to your life, and habits that actually stick. Android Exclusive.
         </p>
 
         <div className="hero-line flex flex-col sm:flex-row gap-4">
@@ -244,7 +244,7 @@ const Pricing = () => {
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-primary font-bold">•</span>
-                <span>Connect banks & import transactions</span>
+                <span>Daily Safe Spend — your real budget, every day</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-primary font-bold">•</span>
@@ -706,13 +706,13 @@ const AffordCheckCard = ({ data, onSimulate }) => {
 
       {/* Clarifying questions / actions */}
       {isAffordable && (
-        <div className="w-full rounded-2xl rounded-tr-sm bg-[#12141C] mt-2 p-3.5 border border-info/30 shadow-lg self-start">
-          <p className="font-heading text-[13px] text-info leading-relaxed mb-3">
+        <div className="w-full rounded-2xl rounded-tr-sm bg-[#12141C] mt-2 p-3.5 border border-primary/30 shadow-lg self-start">
+          <p className="font-heading text-[13px] text-primary leading-relaxed mb-3">
             You would only have ${remainingAfter} left for the rest of the cycle. Should I simulate a split payment plan to keep your daily budget safer?
           </p>
           <div className="flex gap-2 flex-wrap">
-            <button onClick={() => onSimulate('yes')} className="rounded-xl border border-info/40 bg-info/10 text-info font-heading font-semibold text-[11px] px-3.5 py-2 hover:bg-info/20 transition-colors shadow-sm">Yes, simulate it</button>
-            <button onClick={() => onSimulate('no')} className="rounded-xl border border-info/40 bg-info/10 text-info font-heading font-semibold text-[11px] px-3.5 py-2 hover:bg-info/20 transition-colors shadow-sm">No, I&apos;ll pay in full</button>
+            <button onClick={() => onSimulate('yes')} className="rounded-xl border border-primary/40 bg-primary/10 text-primary font-heading font-semibold text-[11px] px-3.5 py-2 hover:bg-primary/20 transition-colors shadow-sm">Yes, simulate it</button>
+            <button onClick={() => onSimulate('no')} className="rounded-xl border border-primary/40 bg-primary/10 text-primary font-heading font-semibold text-[11px] px-3.5 py-2 hover:bg-primary/20 transition-colors shadow-sm">No, I&apos;ll pay in full</button>
           </div>
         </div>
       )}
@@ -830,39 +830,39 @@ const AiWisey = () => {
     <section id="intelligence" className="py-24 md:py-32 px-6 md:px-16 overflow-hidden border-t items-center border-surfaceBorder bg-background relative flex flex-col lg:flex-row gap-16 justify-center">
 
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-info/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="flex-1 max-w-xl relative z-10">
-        <div className="bg-info/10 border border-info/20 text-info px-4 py-1.5 rounded-full inline-flex font-heading font-bold text-xs uppercase tracking-widest mb-6">
+        <div className="bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full inline-flex font-heading font-bold text-xs uppercase tracking-widest mb-6">
           AI Companion
         </div>
         <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6 text-textMain tracking-tight leading-tight text-balance">
-          Meet <span className="text-info">Wisey.</span><br />Your AI Companion.
+          Meet <span className="text-primary">Wisey.</span><br />Your AI Companion.
         </h2>
         <p className="font-heading text-textSub text-lg leading-relaxed mb-8 text-balance">
           Wisey is your always-on financial companion. It automates budget tracking, explains your money in plain language, and proactively guides you toward better habits — like a patient friend who happens to be a finance expert.
         </p>
         <ul className="space-y-4 font-heading text-textMain">
-          <li className="flex items-center gap-3"><ShieldCheck className="w-5 h-5 text-info" /> Total privacy, no data leasing.</li>
-          <li className="flex items-center gap-3"><Zap className="w-5 h-5 text-info" /> Automates the boring stuff so you focus on decisions.</li>
-          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-info" /> Guides you in plain English, not jargon.</li>
+          <li className="flex items-center gap-3"><ShieldCheck className="w-5 h-5 text-primary" /> Total privacy, no data leasing.</li>
+          <li className="flex items-center gap-3"><Zap className="w-5 h-5 text-primary" /> Automates the boring stuff so you focus on decisions.</li>
+          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-primary" /> Guides you in plain English, not jargon.</li>
         </ul>
       </div>
 
       <div className="flex-1 w-full max-w-[440px] relative z-10">
         {/* Mock Chat Interace */}
         <div className="bg-[#0B0D12] border border-surfaceBorder rounded-[2rem] p-4 h-[550px] flex flex-col shadow-2xl relative overflow-hidden ring-1 ring-white/5">
-          <div className="absolute inset-0 bg-gradient-to-b from-info/5 to-transparent opacity-50 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-50 pointer-events-none"></div>
 
           <div className="flex items-center justify-between border-b border-surfaceBorder/50 pb-4 px-2 relative z-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-info flex items-center justify-center shadow-[0_0_15px_rgba(84,160,255,0.4)]">
+              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.4)]">
                 <WiseyOwlAvatar className="w-5 h-5 text-background" />
               </div>
               <div>
                 <div className="font-heading font-bold text-textMain text-sm">Wisey</div>
-                <div className="font-data text-[11px] text-info flex items-center gap-1.5 mt-0.5 tracking-wider">
-                  <div className="w-1.5 h-1.5 rounded-full bg-info animate-pulse"></div>
+                <div className="font-data text-[11px] text-primary flex items-center gap-1.5 mt-0.5 tracking-wider">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
                   ONLINE
                 </div>
               </div>
@@ -878,7 +878,7 @@ const AiWisey = () => {
                   </div>
                 )}
                 {msg.type === "text" ? (
-                  <div className={`${msg.fromUser ? 'bg-info border-info/50 text-white rounded-tr-sm' : 'bg-surfaceVariant border-surfaceBorder text-textMain rounded-tl-sm'} px-4 py-3 rounded-2xl font-heading text-[13px] leading-relaxed max-w-[85%] border shadow-sm`}>
+                  <div className={`${msg.fromUser ? 'bg-primary border-primary/50 text-white rounded-tr-sm' : 'bg-surfaceVariant border-surfaceBorder text-textMain rounded-tl-sm'} px-4 py-3 rounded-2xl font-heading text-[13px] leading-relaxed max-w-[85%] border shadow-sm`}>
                     {msg.content}
                   </div>
                 ) : msg.type === "afford_check" ? (
@@ -908,7 +908,7 @@ const AiWisey = () => {
           </div>
 
           <div className="mt-auto pt-2 relative z-10">
-            <div className="bg-surfaceVariant/60 rounded-full flex items-center px-4 py-2 border border-surfaceBorder/80 focus-within:border-info/50 transition-colors backdrop-blur-md">
+            <div className="bg-surfaceVariant/60 rounded-full flex items-center px-4 py-2 border border-surfaceBorder/80 focus-within:border-primary/50 transition-colors backdrop-blur-md">
               <input
                 type="text"
                 placeholder="Ask Wisey anything..."
@@ -917,7 +917,7 @@ const AiWisey = () => {
                 onKeyDown={(e) => e.key === 'Enter' && handleDirectSend()}
                 className="font-heading text-[13px] text-textMain bg-transparent border-none outline-none flex-1 placeholder:text-textSub/50 h-9"
               />
-              <button onClick={handleDirectSend} className="w-8 h-8 rounded-full bg-info flex items-center justify-center hover:bg-info/90 transition-colors ml-2 shrink-0">
+              <button onClick={handleDirectSend} className="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors ml-2 shrink-0">
                 <ArrowRight className="w-4 h-4 text-background" />
               </button>
             </div>
