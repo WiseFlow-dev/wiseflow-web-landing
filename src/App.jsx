@@ -111,24 +111,23 @@ const ComparisonSection = () => {
             <h3 className="font-heading font-bold text-lg sm:text-xl text-textMain">Traditional Apps</h3>
           </div>
           <ul className="space-y-4 font-heading text-sm sm:text-base text-textSub">
-            <li>• Arbitrary "$500" budgets that make you feel guilty.</li>
-            <li>• Punishing red bars when you go over.</li>
-            <li>• Generic "You spent money!" alerts without solutions.</li>
-            <li>• Stressful spreadsheets & heavy pie charts.</li>
+            <li>• Arbitrary budgets that make you feel like you&apos;re always failing.</li>
+            <li>• Punishing red bars with no explanation of what to do next.</li>
+            <li>• Generic alerts that say "you spent money" — not "here&apos;s what it means."</li>
+            <li>• Cold numbers, no context, no one in your corner.</li>
           </ul>
         </div>
-        
-        <div className="flex-1 bg-[#12141C] border border-primary/30 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-[0_0_40px_-15px_rgba(34,197,94,0.15)]">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-primary/20 relative z-10">
+
+        <div className="flex-1 bg-surface border border-surfaceBorder rounded-3xl p-6 sm:p-8 opacity-80 backdrop-blur-sm">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-surfaceBorder/50">
             <CheckCircle2 className="w-6 h-6 text-primary" />
             <h3 className="font-heading font-bold text-lg sm:text-xl text-textMain">The WiseFlow Way</h3>
           </div>
-          <ul className="space-y-4 font-heading text-sm sm:text-base text-textSub relative z-10">
-            <li><span className="text-primary font-bold">• Freedom Number:</span> Know your Daily Safe Spend exactly.</li>
-            <li><span className="text-primary font-bold">• Unbiased Companion:</span> Wisey adapts, no guilt-trips.</li>
-            <li><span className="text-primary font-bold">• Gamification:</span> Level up your real-life finances with XP.</li>
-            <li><span className="text-primary font-bold">• Anti-Boxy UX:</span> Premium, gorgeous, anxiety-free design.</li>
+          <ul className="space-y-4 font-heading text-sm sm:text-base text-textSub">
+            <li><span className="text-primary font-bold">• A real daily number:</span> Not a guess. Your Daily Safe Spend, calculated from your actual income and obligations — updated every day.</li>
+            <li><span className="text-primary font-bold">• Wisey just talks to you:</span> "You&apos;re on track this week" or "Heads up, a big bill lands Friday." Plain words, not charts.</li>
+            <li><span className="text-primary font-bold">• Your month, in plain language:</span> At the end of every cycle, WiseFlow tells you what happened, where it went, and what to do next.</li>
+            <li><span className="text-primary font-bold">• Proactive, not reactive:</span> The Action Center surfaces overspends and patterns before they become real problems — with a clear suggestion, not just a number.</li>
           </ul>
         </div>
       </div>
@@ -264,7 +263,7 @@ const Pricing = () => {
                   <div className="font-heading font-bold text-textMain">Monthly</div>
                   <span className="text-[10px] text-primary font-semibold bg-primary/10 px-2 py-0.5 rounded-full uppercase tracking-wider">First Month</span>
                 </div>
-                <div className="font-heading font-extrabold text-4xl text-textMain">$4.99<span className="text-textSub text-base font-semibold">/mo</span></div>
+                <div className="font-heading font-extrabold text-4xl text-textMain">$3.99<span className="text-textSub text-base font-semibold">/mo</span></div>
               </div>
 
               <div className="w-full h-px bg-surfaceBorder/50"></div>
@@ -272,8 +271,8 @@ const Pricing = () => {
               <div className="flex flex-col gap-1">
                 <div className="font-heading font-bold text-textMain">Yearly</div>
                 <div className="flex items-baseline gap-2">
-                  <div className="font-heading font-extrabold text-4xl text-textMain">$49.99<span className="text-textSub text-base font-semibold">/yr</span></div>
-                  <span className="text-primary font-heading font-semibold text-sm">(Save $9.89)</span>
+                  <div className="font-heading font-extrabold text-4xl text-textMain">$39.99<span className="text-textSub text-base font-semibold">/yr</span></div>
+                  <span className="text-primary font-heading font-semibold text-sm">(Save $7.89)</span>
                 </div>
                 <div className="font-heading text-textSub text-sm mt-1">Lock in the launch rate.</div>
               </div>
@@ -314,194 +313,184 @@ const SecuritySection = () => {
 };
 
 const LegalSectionHeading = ({ children }) => (
-  <h3 className="font-heading font-semibold text-sm text-textMain uppercase tracking-widest mt-6 mb-2 pb-1 border-b border-surfaceBorder/60">{children}</h3>
+  <h3 className="font-heading font-semibold text-sm text-textMain uppercase tracking-widest mt-8 mb-2 pb-1 border-b border-surfaceBorder/60">{children}</h3>
 );
 
-const LegalAndSupport = () => {
+// ==========================================
+// LEGAL PAGE — dedicated screen
+// ==========================================
+
+const PrivacyContent = () => (
+  <div className="space-y-2">
+  <p>WiseFlow is built with privacy as a default, not an afterthought. We do not sell, rent, or lease your personal data to anyone — ever.</p>
+
+  <LegalSectionHeading>What we collect</LegalSectionHeading>
+  <p>We collect only what is necessary to run the service:</p>
+  <p>— Your name and email address when you create an account.<br />— Financial records you enter manually (transactions, wallets, budgets).<br />— Bank transaction data and account balances when you choose to link a bank — this happens only with your explicit action.<br />— App usage data (which screens you visit, feature interactions) so we can improve the app. This data does not include your financial figures.<br />— Device identifiers and push notification tokens so we can send you alerts you request.<br />— IP address and general region for security and fraud detection.</p>
+
+  <LegalSectionHeading>Third-party services we use</LegalSectionHeading>
+  <p>To deliver the app, we work with the following companies. Each one receives only the data they need to do their job:</p>
+  <p>— <span className="text-textMain font-semibold">Plaid</span> (US bank connections) — processes your bank credentials and returns transaction data to us. Plaid never shares your data with advertisers. See Plaid&apos;s privacy policy at plaid.com/legal.<br />— <span className="text-textMain font-semibold">TrueLayer</span> (UK/EU bank connections) — same role as Plaid for European accounts. See TrueLayer&apos;s privacy policy at truelayer.com/legal.<br />— <span className="text-textMain font-semibold">GoCardless</span> — used for certain open-banking payment flows. See GoCardless&apos;s privacy policy at gocardless.com/legal.<br />— <span className="text-textMain font-semibold">Supabase</span> — our database and authentication provider. Your data is stored on Supabase&apos;s encrypted infrastructure, hosted on AWS (US region by default).<br />— <span className="text-textMain font-semibold">Google (Gemini AI)</span> — powers Wisey, our AI companion. When you send a message to Wisey, the conversation and relevant financial context is sent to Google&apos;s Gemini API to generate a response. Google does not use your data to train their models by default under the API terms. See Google&apos;s privacy policy at policies.google.com/privacy.</p>
+
+  <LegalSectionHeading>AI companion (Wisey)</LegalSectionHeading>
+  <p>Wisey is powered by Google&apos;s Gemini AI. When you chat with Wisey, your messages and a summary of your financial context (such as your balance, spending patterns, and upcoming obligations) are sent to Google&apos;s servers to generate a response. No raw bank credentials are ever included. You can stop using Wisey at any time and it has no effect on the rest of your account.</p>
+
+  <LegalSectionHeading>Push notifications</LegalSectionHeading>
+  <p>If you allow notifications, we send you alerts such as daily spending summaries, bill reminders, and budget warnings. You can turn these off at any time in your device&apos;s notification settings or inside the app. Turning off notifications does not affect any other part of the service.</p>
+
+  <LegalSectionHeading>Analytics</LegalSectionHeading>
+  <p>We collect anonymized usage data (which features are used, crash reports, performance metrics) to understand how the app is working and where to improve it. This data cannot be tied back to your identity or your financial figures.</p>
+
+  <LegalSectionHeading>Peer comparison (anonymous benchmarks)</LegalSectionHeading>
+  <p>WiseFlow includes a feature that shows how your savings rate and spending patterns compare to peers in your income bracket. To power this, we aggregate anonymized financial metrics across users — your actual figures are never shared. What enters the comparison pool is a derived number (e.g. "savings rate: 18%"), not raw transactions or balances. You can opt out of this feature by turning off peer benchmarks in the app settings.</p>
+
+  <LegalSectionHeading>Legal basis for processing (GDPR)</LegalSectionHeading>
+  <p>If you are located in the EU or UK, we are required to tell you the legal basis we rely on for each type of data processing:</p>
+  <p>— <span className="text-textMain font-semibold">Contract performance:</span> Processing your account data, financial records, and bank connection data to deliver the service you signed up for.<br />— <span className="text-textMain font-semibold">Legitimate interest:</span> App analytics, fraud detection, security monitoring, and improving the service — where these do not override your rights.<br />— <span className="text-textMain font-semibold">Consent:</span> Push notifications and any optional marketing emails. You can withdraw consent at any time.<br />— <span className="text-textMain font-semibold">Legal obligation:</span> Records we are required to keep under applicable law.</p>
+
+  <LegalSectionHeading>Automated decision-making (Wisey AI)</LegalSectionHeading>
+  <p>Wisey uses AI to analyze your financial data and generate spending verdicts, budget recommendations, and affordability assessments. Under GDPR Article 22, you have the right not to be subject to decisions based solely on automated processing that have a significant legal or similarly significant effect on you. Wisey&apos;s outputs are advisory — no decision that affects your legal rights or financial standing is made automatically without human review. Contact us to request a human review of any specific output.</p>
+
+  <LegalSectionHeading>GLBA privacy notice (US users)</LegalSectionHeading>
+  <p>Because WiseFlow accesses consumer financial data via bank connection partners (Plaid, TrueLayer), the Gramm-Leach-Bliley Act (GLBA) may apply for US users. We collect and use your financial data solely to provide the WiseFlow service to you. We do not sell your financial information to third parties, and we do not share it with non-affiliated companies for their own marketing purposes. To opt out of any non-essential sharing, email <a className="text-primary hover:underline" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a> with the subject line "GLBA Opt-Out."</p>
+
+  <LegalSectionHeading>Where your data is stored</LegalSectionHeading>
+  <p>Your data is stored on Supabase infrastructure hosted on Amazon Web Services (AWS) in the United States. If you are located in the EU or UK, your data is transferred to the US under appropriate legal safeguards.</p>
+
+  <LegalSectionHeading>Data retention and deletion</LegalSectionHeading>
+  <p>— Your data is kept while your account is active.<br />— If your account is inactive for 24 months, personal data that is not legally required may be anonymized.<br />— After you request account deletion, we target full deletion or de-identification within 30 days, except where the law requires us to keep certain records.<br />— Security, fraud, dispute, and compliance records may be kept up to 180 days after deletion.<br />— Encrypted backup copies may persist up to 90 days before automatic removal.<br />— This policy is reviewed at least every 12 months.</p>
+
+  <LegalSectionHeading>Your rights</LegalSectionHeading>
+  <p>Regardless of where you live, you have the following rights over your data:</p>
+  <p>— <span className="text-textMain font-semibold">Access:</span> Ask us what personal data we hold about you.<br />— <span className="text-textMain font-semibold">Correction:</span> Ask us to fix inaccurate information.<br />— <span className="text-textMain font-semibold">Deletion:</span> Ask us to delete your account and personal data.<br />— <span className="text-textMain font-semibold">Portability:</span> Ask for a copy of your data in a readable format.<br />— <span className="text-textMain font-semibold">Objection:</span> Ask us to stop processing your data for certain purposes.<br />— <span className="text-textMain font-semibold">California residents (CCPA/CPRA 2026):</span> You have the right to know what categories of personal information we collect, the right to delete it, the right to correct it, and the right to opt out of any sale or sharing. We do not sell personal information. If you submit an opt-out or deletion request, we will send you a visible confirmation once it has been processed. To submit a request, email us with the subject line "CCPA Request."<br />— <span className="text-textMain font-semibold">EU/UK residents (GDPR):</span> You may lodge a complaint with your local data protection authority if you believe we have not handled your data correctly.</p>
+  <p>To exercise any of these rights, email <a className="text-primary hover:underline" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a> with your account email and the request. We will respond within 30 days.</p>
+
+  <LegalSectionHeading>Security</LegalSectionHeading>
+  <p>WiseFlow maintains a documented information security policy covering confidentiality, integrity, and availability. Our practices include: encryption of data in transit (TLS) and at rest, multi-factor authentication for internal systems, access controls limiting who can see user data, incident response procedures, and regular policy reviews (at least every 12 months). No system is 100% secure — if we become aware of a breach that affects your data, we will notify you as required by law.</p>
+
+  <LegalSectionHeading>Children</LegalSectionHeading>
+  <p>WiseFlow is not intended for anyone under the age of 18. We do not knowingly collect personal data from minors. If we discover that a minor has created an account, we will delete it promptly.</p>
+</div>
+);
+
+const TermsContent = () => (
+  <div className="space-y-2">
+  <LegalSectionHeading>What WiseFlow is</LegalSectionHeading>
+  <p>WiseFlow is a personal finance management application. It is not a bank, lender, payment processor, broker, investment advisor, tax advisor, or legal advisor. Nothing in the app — including Wisey&apos;s responses — constitutes financial, legal, or tax advice. Always consult a qualified professional before making significant financial decisions.</p>
+
+  <LegalSectionHeading>Who can use WiseFlow</LegalSectionHeading>
+  <p>You must be at least 18 years old to create an account and use WiseFlow. By creating an account, you confirm that you meet this age requirement. If you are found to be under 18, your account will be closed and your data will be deleted.</p>
+
+  <LegalSectionHeading>Your account</LegalSectionHeading>
+  <p>You are responsible for keeping your login credentials private and for all activity that happens under your account. Do not share your account with anyone else. If you suspect unauthorized access, contact us immediately. We are not liable for losses caused by unauthorized use of your account where you failed to keep your credentials secure.</p>
+
+  <LegalSectionHeading>Subscriptions and billing</LegalSectionHeading>
+  <p>WiseFlow is available on a subscription basis, billed through Google Play. By subscribing, you authorize Google Play to charge your payment method on a recurring basis (monthly or yearly, depending on your chosen plan) until you cancel. Prices are shown in the app and on this page. We may change prices with reasonable advance notice.</p>
+
+  <LegalSectionHeading>Cancellation and refunds</LegalSectionHeading>
+  <p>You can cancel your subscription at any time through the Google Play subscription manager on your device. Cancellation stops future charges. Access to paid features continues until the end of the current billing period. Refunds are governed by Google Play&apos;s refund policy. If you believe you are entitled to a refund, contact Google Play support or email us and we will assist.</p>
+
+  <LegalSectionHeading>Bank connections</LegalSectionHeading>
+  <p>When you link a bank account, you authorize WiseFlow and its banking partners (Plaid, TrueLayer, GoCardless) to access your transaction history and balance data on your behalf, in read-only mode. We never initiate payments or move money without your explicit action. You can disconnect any linked bank account at any time from within the app.</p>
+
+  <LegalSectionHeading>AI companion (Wisey)</LegalSectionHeading>
+  <p>Wisey&apos;s responses are generated by an AI and are informational only. They may not always be accurate, complete, or appropriate for your specific situation. Do not make significant financial decisions based solely on Wisey&apos;s output. WiseFlow is not responsible for any outcome resulting from reliance on Wisey&apos;s responses.</p>
+
+  <LegalSectionHeading>Prohibited uses</LegalSectionHeading>
+  <p>You agree not to:<br />— Use the app for any unlawful purpose or in violation of these Terms.<br />— Attempt to reverse-engineer, copy, or reproduce any part of the app.<br />— Attempt to gain unauthorized access to other users&apos; accounts or our systems.<br />— Use the app to process or track financial activity related to fraud, money laundering, or other illegal conduct.<br />— Automate access to the app in ways not explicitly permitted.</p>
+
+  <LegalSectionHeading>Intellectual property</LegalSectionHeading>
+  <p>WiseFlow, Wisey, and all associated designs, code, and content are owned by WiseFlow (Motomation). You may not copy, reproduce, or distribute any part of the app without written permission. You retain full ownership of the financial data you enter. By using the app, you grant us a limited license to process that data to provide the service to you.</p>
+
+  <LegalSectionHeading>No warranty</LegalSectionHeading>
+  <p>WiseFlow is provided &quot;as-is&quot; and &quot;as available.&quot; We make no guarantees that the app will be error-free, always available, or perfectly accurate. We do our best, but we cannot promise uninterrupted service, and we are not responsible for decisions made based on data shown in the app.</p>
+
+  <LegalSectionHeading>Limitation of liability</LegalSectionHeading>
+  <p>To the maximum extent permitted by law, WiseFlow and its team will not be liable for any indirect, incidental, special, or consequential damages arising from your use of the app — including lost savings, missed financial opportunities, or incorrect data. Our total liability to you for any claim will not exceed the amount you paid us in the 12 months before the claim arose.</p>
+
+  <LegalSectionHeading>Governing law and disputes</LegalSectionHeading>
+  <p>These Terms are governed by the laws of the Republic of Turkey. If a dispute arises, please contact us first so we can try to resolve it informally. Consumer disputes will be handled through the competent consumer arbitration committees, mandatory mediation, consumer courts, or other authorized authorities in Turkey, as required by applicable law. Nothing in these terms limits any mandatory rights you may have under Turkish consumer law.</p>
+
+  <LegalSectionHeading>Changes to these terms</LegalSectionHeading>
+  <p>We may update these Terms or the Privacy Policy at any time. If the change is significant, we will notify you by email or with a notice inside the app at least 14 days before it takes effect. Continued use of the app after the effective date means you accept the updated terms. If you disagree, you may cancel your account before the change takes effect.</p>
+
+  <LegalSectionHeading>Account termination</LegalSectionHeading>
+  <p>We may suspend or close your account if you violate these Terms, engage in fraudulent activity, or cause harm to other users or our systems. You may close your account at any time by contacting support. After closure, your data is handled according to the Privacy Policy retention schedule.</p>
+</div>
+);
+
+const SupportContent = () => (
+  <div className="space-y-2">
+  <p>We&apos;re a small team and we take support seriously. If something is wrong, we want to know.</p>
+
+  <LegalSectionHeading>General support</LegalSectionHeading>
+  <p>For app issues, feedback, or questions about your account, email us at:<br /><a className="text-primary hover:underline font-semibold" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a></p>
+
+  <LegalSectionHeading>Privacy & deletion requests</LegalSectionHeading>
+  <p>To request access to your data, a copy of your data, or full account deletion, email the address above with the subject line "Privacy Request" and include your account email. We will respond within 30 days.</p>
+
+  <LegalSectionHeading>Billing & subscription issues</LegalSectionHeading>
+  <p>Subscriptions are managed through Google Play. For billing issues, refund requests, or cancellations, go to the Google Play subscription manager on your device, or contact Google Play support directly. You can also email us and we will help guide you.</p>
+
+  <LegalSectionHeading>Security concerns</LegalSectionHeading>
+  <p>If you believe you have found a security issue or your account has been compromised, email us immediately at the address above with the subject line "Security Issue". We treat these as the highest priority.</p>
+</div>
+);
+
+const LegalPage = ({ initialTab, onBack }) => {
+  const [activeTab, setActiveTab] = useState(initialTab || 'privacy');
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => { if (initialTab) setActiveTab(initialTab); }, [initialTab]);
+
+  const tabs = [
+    { id: 'privacy', label: 'Privacy Policy' },
+    { id: 'terms', label: 'Terms of Service' },
+    { id: 'support', label: 'Support' },
+  ];
+
   return (
-    <section className="py-24 px-6 md:px-16 border-t border-surfaceBorder bg-background relative z-10">
-      <div className="max-w-6xl mx-auto flex flex-col gap-6">
-
-        {/* Row 1: Privacy Policy + Support */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-          <div id="privacy" className="lg:col-span-2 bg-surface border border-surfaceBorder rounded-3xl p-8">
-            <h2 className="font-heading font-bold text-2xl text-textMain mb-1">Privacy Policy</h2>
-            <p className="font-heading text-xs text-textSub mb-4">Last updated: May 2026 — Version 1.3</p>
-            <div className="font-heading text-textSub leading-relaxed space-y-2 text-sm">
-
-              <p>WiseFlow is built with privacy as a default, not an afterthought. We do not sell, rent, or lease your personal data to anyone — ever.</p>
-
-              <LegalSectionHeading>What we collect</LegalSectionHeading>
-              <p>We collect only what is necessary to run the service:</p>
-              <p>
-                — Your name and email address when you create an account.<br />
-                — Financial records you enter manually (transactions, wallets, budgets).<br />
-                — Bank transaction data and account balances when you choose to link a bank — this happens only with your explicit action.<br />
-                — App usage data (which screens you visit, feature interactions) so we can improve the app. This data does not include your financial figures.<br />
-                — Device identifiers and push notification tokens so we can send you alerts you request.<br />
-                — IP address and general region for security and fraud detection.
-              </p>
-
-              <LegalSectionHeading>Third-party services we use</LegalSectionHeading>
-              <p>To deliver the app, we work with the following companies. Each one receives only the data they need to do their job:</p>
-              <p>
-                — <span className="text-textMain font-semibold">Plaid</span> (US bank connections) — processes your bank credentials and returns transaction data to us. Plaid never shares your data with advertisers. See Plaid&apos;s privacy policy at plaid.com/legal.<br />
-                — <span className="text-textMain font-semibold">TrueLayer</span> (UK/EU bank connections) — same role as Plaid for European accounts. See TrueLayer&apos;s privacy policy at truelayer.com/legal.<br />
-                — <span className="text-textMain font-semibold">GoCardless</span> — used for certain open-banking payment flows. See GoCardless&apos;s privacy policy at gocardless.com/legal.<br />
-                — <span className="text-textMain font-semibold">Supabase</span> — our database and authentication provider. Your data is stored on Supabase&apos;s encrypted infrastructure, hosted on AWS (US region by default).<br />
-                — <span className="text-textMain font-semibold">Google (Gemini AI)</span> — powers Wisey, our AI companion. When you send a message to Wisey, the conversation and relevant financial context is sent to Google&apos;s Gemini API to generate a response. Google does not use your data to train their models by default under the API terms. See Google&apos;s privacy policy at policies.google.com/privacy.
-              </p>
-
-              <LegalSectionHeading>AI companion (Wisey)</LegalSectionHeading>
-              <p>Wisey is powered by Google&apos;s Gemini AI. When you chat with Wisey, your messages and a summary of your financial context (such as your balance, spending patterns, and upcoming obligations) are sent to Google&apos;s servers to generate a response. No raw bank credentials are ever included. You can stop using Wisey at any time and it has no effect on the rest of your account.</p>
-
-              <LegalSectionHeading>Push notifications</LegalSectionHeading>
-              <p>If you allow notifications, we send you alerts such as daily spending summaries, bill reminders, and budget warnings. You can turn these off at any time in your device&apos;s notification settings or inside the app. Turning off notifications does not affect any other part of the service.</p>
-
-              <LegalSectionHeading>Analytics</LegalSectionHeading>
-              <p>We collect anonymized usage data (which features are used, crash reports, performance metrics) to understand how the app is working and where to improve it. This data cannot be tied back to your identity or your financial figures.</p>
-
-              <LegalSectionHeading>Peer comparison (anonymous benchmarks)</LegalSectionHeading>
-              <p>WiseFlow includes a feature that shows how your savings rate and spending patterns compare to peers in your income bracket. To power this, we aggregate anonymized financial metrics across users — your actual figures are never shared. What enters the comparison pool is a derived number (e.g. "savings rate: 18%"), not raw transactions or balances. You can opt out of this feature by turning off peer benchmarks in the app settings, which removes your metrics from the pool going forward.</p>
-
-              <LegalSectionHeading>Legal basis for processing (GDPR)</LegalSectionHeading>
-              <p>If you are located in the EU or UK, we are required to tell you the legal basis we rely on for each type of data processing:</p>
-              <p>
-                — <span className="text-textMain font-semibold">Contract performance:</span> Processing your account data, financial records, and bank connection data to deliver the service you signed up for.<br />
-                — <span className="text-textMain font-semibold">Legitimate interest:</span> App analytics, fraud detection, security monitoring, and improving the service — where these do not override your rights.<br />
-                — <span className="text-textMain font-semibold">Consent:</span> Push notifications and any optional marketing emails (e.g. launch announcements from the waitlist). You can withdraw consent at any time.<br />
-                — <span className="text-textMain font-semibold">Legal obligation:</span> Records we are required to keep under applicable law (e.g. fraud prevention, compliance).
-              </p>
-
-              <LegalSectionHeading>Automated decision-making (Wisey AI)</LegalSectionHeading>
-              <p>Wisey uses AI to analyze your financial data and generate spending verdicts, budget recommendations, and affordability assessments. Under GDPR Article 22, you have the right not to be subject to decisions based solely on automated processing that have a significant legal or similarly significant effect on you. Wisey&apos;s outputs are advisory — no decision that affects your legal rights or financial standing is made automatically without human review. If you have concerns about a specific output, you can contact us and request a human review.</p>
-
-              <LegalSectionHeading>GLBA privacy notice (US users)</LegalSectionHeading>
-              <p>Because WiseFlow accesses consumer financial data via bank connection partners (Plaid, TrueLayer), the Gramm-Leach-Bliley Act (GLBA) may apply to certain aspects of our service for US users. We collect and use your financial data solely to provide the WiseFlow service to you. We do not sell your financial information to third parties, and we do not share it with non-affiliated companies for their own marketing purposes. You have the right to opt out of any sharing of your financial data beyond what is needed to operate the service — to do so, email us at <a className="text-primary hover:underline" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a> with the subject line "GLBA Opt-Out."</p>
-
-              <LegalSectionHeading>Where your data is stored</LegalSectionHeading>
-              <p>Your data is stored on Supabase infrastructure hosted on Amazon Web Services (AWS) in the United States. If you are located in the EU or UK, your data is transferred to the US under appropriate legal safeguards.</p>
-
-              <LegalSectionHeading>Data retention and deletion</LegalSectionHeading>
-              <p>
-                — Your data is kept while your account is active.<br />
-                — If your account is inactive for 24 months, personal data that is not legally required may be anonymized.<br />
-                — After you request account deletion, we target full deletion or de-identification within 30 days, except where the law requires us to keep certain records.<br />
-                — Security, fraud, dispute, and compliance records may be kept up to 180 days after deletion.<br />
-                — Encrypted backup copies may persist up to 90 days before automatic removal.<br />
-                — This policy is reviewed at least every 12 months.
-              </p>
-
-              <LegalSectionHeading>Your rights</LegalSectionHeading>
-              <p>Regardless of where you live, you have the following rights over your data:</p>
-              <p>
-                — <span className="text-textMain font-semibold">Access:</span> Ask us what personal data we hold about you.<br />
-                — <span className="text-textMain font-semibold">Correction:</span> Ask us to fix inaccurate information.<br />
-                — <span className="text-textMain font-semibold">Deletion:</span> Ask us to delete your account and personal data.<br />
-                — <span className="text-textMain font-semibold">Portability:</span> Ask for a copy of your data in a readable format.<br />
-                — <span className="text-textMain font-semibold">Objection:</span> Ask us to stop processing your data for certain purposes.<br />
-                — <span className="text-textMain font-semibold">California residents (CCPA/CPRA 2026):</span> You have the right to know what categories of personal information we collect, the right to delete it, the right to correct it, and the right to opt out of any sale or sharing. We do not sell personal information. If you submit an opt-out or deletion request, we will send you a visible confirmation once it has been processed (required as of January 1, 2026). To submit a request, email us with the subject line "CCPA Request."<br />
-                — <span className="text-textMain font-semibold">EU/UK residents (GDPR):</span> You may lodge a complaint with your local data protection authority if you believe we have not handled your data correctly.
-              </p>
-              <p>To exercise any of these rights, email us at <a className="text-primary hover:underline" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a> with your account email and the request. We will respond within 30 days.</p>
-
-              <LegalSectionHeading>Security</LegalSectionHeading>
-              <p>WiseFlow maintains a documented information security policy covering confidentiality, integrity, and availability. Our practices include: encryption of data in transit (TLS) and at rest, multi-factor authentication for internal systems, access controls limiting who can see user data, incident response procedures, and regular policy reviews (at least every 12 months). No system is 100% secure — if we become aware of a breach that affects your data, we will notify you as required by law.</p>
-
-              <LegalSectionHeading>Children</LegalSectionHeading>
-              <p>WiseFlow is not intended for anyone under the age of 18. We do not knowingly collect personal data from minors. If we discover that a minor has created an account, we will delete it promptly.</p>
-
-            </div>
+    <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain">
+      <header className="sticky top-0 z-50 border-b border-surfaceBorder bg-background/95 backdrop-blur-xl">
+        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="font-heading font-bold text-xl tracking-tight">
+            <span className="text-textMain">Wise</span><span className="text-primary">Flow</span>
           </div>
+          <button onClick={onBack} className="font-heading text-sm font-medium text-textSub hover:text-textMain transition-colors flex items-center gap-1.5">
+            ← Back
+          </button>
+        </div>
+      </header>
 
-          <div id="support" className="bg-surface border border-surfaceBorder rounded-3xl p-8 flex flex-col gap-2">
-            <h2 className="font-heading font-bold text-2xl text-textMain mb-1">Support</h2>
-            <div className="font-heading text-textSub leading-relaxed space-y-3 text-sm">
-              <p>We&apos;re a small team and we take support seriously. If something is wrong, we want to know.</p>
-
-              <LegalSectionHeading>General support</LegalSectionHeading>
-              <p>For app issues, feedback, or questions about your account, email us at:<br />
-                <a className="text-primary hover:underline font-semibold" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a>
-              </p>
-
-              <LegalSectionHeading>Privacy & deletion requests</LegalSectionHeading>
-              <p>To request access to your data, a copy of your data, or full account deletion, email the address above with the subject line &quot;Privacy Request&quot; and include your account email. We will respond within 30 days.</p>
-
-              <LegalSectionHeading>Billing & subscription issues</LegalSectionHeading>
-              <p>Subscriptions are managed through Google Play. For billing issues, refund requests, or cancellations, go to the Google Play subscription manager on your device, or contact Google Play support directly. You can also email us and we will help guide you.</p>
-
-              <LegalSectionHeading>Security concerns</LegalSectionHeading>
-              <p>If you believe you have found a security issue or your account has been compromised, email us immediately at the address above with the subject line &quot;Security Issue&quot;. We treat these as the highest priority.</p>
-            </div>
-          </div>
-
+      <div className="max-w-3xl mx-auto px-6 pt-10 pb-24">
+        <div className="mb-8">
+          <h1 className="font-heading font-bold text-3xl md:text-4xl text-textMain mb-1">Legal & Privacy</h1>
+          <p className="font-heading text-xs text-textSub">Last updated: May 2026 — Version 1.3</p>
         </div>
 
-        {/* Row 2: Terms of Service — full width */}
-        <div id="terms" className="bg-surface border border-surfaceBorder rounded-3xl p-8">
-          <h2 className="font-heading font-bold text-2xl text-textMain mb-1">Terms of Service</h2>
-          <p className="font-heading text-xs text-textSub mb-4">Last updated: May 2026 — Version 1.3</p>
-          <div className="font-heading text-textSub leading-relaxed text-sm grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
-
-            <div>
-              <LegalSectionHeading>What WiseFlow is</LegalSectionHeading>
-              <p>WiseFlow is a personal finance management application. It is not a bank, lender, payment processor, broker, investment advisor, tax advisor, or legal advisor. Nothing in the app — including Wisey&apos;s responses — constitutes financial, legal, or tax advice. Always consult a qualified professional before making significant financial decisions.</p>
-
-              <LegalSectionHeading>Who can use WiseFlow</LegalSectionHeading>
-              <p>You must be at least 18 years old to create an account and use WiseFlow. By creating an account, you confirm that you meet this age requirement. If you are found to be under 18, your account will be closed and your data will be deleted.</p>
-
-              <LegalSectionHeading>Your account</LegalSectionHeading>
-              <p>You are responsible for keeping your login credentials private and for all activity that happens under your account. Do not share your account with anyone else. If you suspect unauthorized access, contact us immediately. We are not liable for losses caused by unauthorized use of your account where you failed to keep your credentials secure.</p>
-
-              <LegalSectionHeading>Subscriptions and billing</LegalSectionHeading>
-              <p>WiseFlow is available on a subscription basis, billed through Google Play. By subscribing, you authorize Google Play to charge your payment method on a recurring basis (monthly or yearly, depending on your chosen plan) until you cancel. Prices are shown in the app and on this page. We may change prices with reasonable advance notice.</p>
-
-              <LegalSectionHeading>Cancellation and refunds</LegalSectionHeading>
-              <p>You can cancel your subscription at any time through the Google Play subscription manager on your device. Cancellation stops future charges. Access to paid features continues until the end of the current billing period. Refunds are governed by Google Play&apos;s refund policy. If you believe you are entitled to a refund, contact Google Play support or email us and we will assist.</p>
-
-              <LegalSectionHeading>Bank connections</LegalSectionHeading>
-              <p>When you link a bank account, you authorize WiseFlow and its banking partners (Plaid, TrueLayer, GoCardless) to access your transaction history and balance data on your behalf, in read-only mode. We never initiate payments or move money without your explicit action. You can disconnect any linked bank account at any time from within the app.</p>
-            </div>
-
-            <div>
-              <LegalSectionHeading>AI companion (Wisey)</LegalSectionHeading>
-              <p>Wisey&apos;s responses are generated by an AI and are informational only. They may not always be accurate, complete, or appropriate for your specific situation. Do not make significant financial decisions based solely on Wisey&apos;s output. WiseFlow is not responsible for any outcome resulting from reliance on Wisey&apos;s responses.</p>
-
-              <LegalSectionHeading>Prohibited uses</LegalSectionHeading>
-              <p>
-                You agree not to:<br />
-                — Use the app for any unlawful purpose or in violation of these Terms.<br />
-                — Attempt to reverse-engineer, copy, or reproduce any part of the app.<br />
-                — Attempt to gain unauthorized access to other users&apos; accounts or our systems.<br />
-                — Use the app to process or track financial activity related to fraud, money laundering, or other illegal conduct.<br />
-                — Automate access to the app in ways not explicitly permitted.
-              </p>
-
-              <LegalSectionHeading>Intellectual property</LegalSectionHeading>
-              <p>WiseFlow, Wisey, and all associated designs, code, and content are owned by WiseFlow (Motomation). You may not copy, reproduce, or distribute any part of the app without written permission. You retain full ownership of the financial data you enter. By using the app, you grant us a limited license to process that data to provide the service to you.</p>
-
-              <LegalSectionHeading>No warranty</LegalSectionHeading>
-              <p>WiseFlow is provided &quot;as-is&quot; and &quot;as available.&quot; We make no guarantees that the app will be error-free, always available, or perfectly accurate. We do our best, but we cannot promise uninterrupted service, and we are not responsible for decisions made based on data shown in the app.</p>
-
-              <LegalSectionHeading>Limitation of liability</LegalSectionHeading>
-              <p>To the maximum extent permitted by law, WiseFlow and its team will not be liable for any indirect, incidental, special, or consequential damages arising from your use of the app — including lost savings, missed financial opportunities, or incorrect data. Our total liability to you for any claim will not exceed the amount you paid us in the 12 months before the claim arose.</p>
-
-              <LegalSectionHeading>Governing law and disputes</LegalSectionHeading>
-              <p>These Terms are governed by the laws of the Republic of Turkey. If a dispute arises, please contact us first so we can try to resolve it informally. Consumer disputes will be handled through the competent consumer arbitration committees, mandatory mediation, consumer courts, or other authorized authorities in Turkey, as required by applicable law. Nothing in these terms limits any mandatory rights you may have under Turkish consumer law.</p>
-
-              <LegalSectionHeading>Changes to these terms</LegalSectionHeading>
-              <p>We may update these Terms or the Privacy Policy at any time. If the change is significant, we will notify you by email or with a notice inside the app at least 14 days before it takes effect. Continued use of the app after the effective date means you accept the updated terms. If you disagree, you may cancel your account before the change takes effect.</p>
-
-              <LegalSectionHeading>Account termination</LegalSectionHeading>
-              <p>We may suspend or close your account if you violate these Terms, engage in fraudulent activity, or cause harm to other users or our systems. You may close your account at any time by contacting support. After closure, your data is handled according to the Privacy Policy retention schedule.</p>
-            </div>
-
-          </div>
+        <div className="flex gap-1.5 bg-surface border border-surfaceBorder rounded-2xl p-1.5 w-fit mb-10 flex-wrap">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`font-heading font-semibold text-sm px-5 py-2.5 rounded-xl transition-all whitespace-nowrap ${
+                activeTab === tab.id ? 'bg-primary text-background shadow-sm' : 'text-textSub hover:text-textMain'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
+        <div className="font-heading text-textSub leading-relaxed text-sm">
+          {activeTab === 'privacy' && <PrivacyContent />}
+          {activeTab === 'terms' && <TermsContent />}
+          {activeTab === 'support' && <SupportContent />}
+        </div>
+
+        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow (Motomation) · contact@wiseflowapp.com · May 2026</p>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -746,14 +735,7 @@ const WiseyOwlAvatar = ({ className = "w-5 h-5" }) => (
 
 const AiWisey = () => {
   const [showAffordDialog, setShowAffordDialog] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      fromUser: false,
-      type: "text",
-      content: "Hey there! I'm Wisey, your intelligent financial companion. How can I help you today?"
-    }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const chatEndRef = useRef(null);
 
@@ -845,7 +827,7 @@ const AiWisey = () => {
         <ul className="space-y-4 font-heading text-textMain">
           <li className="flex items-center gap-3"><ShieldCheck className="w-5 h-5 text-primary" /> Total privacy, no data leasing.</li>
           <li className="flex items-center gap-3"><Zap className="w-5 h-5 text-primary" /> Automates the boring stuff so you focus on decisions.</li>
-          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-primary" /> Guides you in plain English, not jargon.</li>
+          <li className="flex items-center gap-3"><MessageSquareText className="w-5 h-5 text-primary" /> Guides you in plain language, not jargon.</li>
         </ul>
       </div>
 
@@ -886,22 +868,27 @@ const AiWisey = () => {
                 ) : null}
               </div>
             ))}
-            {messages.length === 1 && (
-              <div className="mt-4 flex flex-col gap-2 relative z-20 w-full max-w-[280px] self-center">
-                <button
-                  onClick={() => setShowAffordDialog(true)}
-                  className="bg-surfaceVariant hover:bg-surfaceBorder border border-surfaceBorder text-textMain rounded-xl px-4 py-3 flex items-center gap-3 transition-colors text-left"
-                >
-                  <span className="text-xl shrink-0">💵</span>
-                  <span className="font-heading text-xs font-medium leading-snug">Can I afford to buy something right now?</span>
-                </button>
-                <button
-                  onClick={() => setInputValue("What insights do you have about my spending?")}
-                  className="bg-surfaceVariant hover:bg-surfaceBorder border border-surfaceBorder text-textMain rounded-xl px-4 py-3 flex items-center gap-3 transition-colors text-left"
-                >
-                  <span className="text-xl shrink-0">📊</span>
-                  <span className="font-heading text-xs font-medium leading-snug">What insights do you have about my spending?</span>
-                </button>
+            {messages.length === 0 && (
+              <div className="flex flex-col gap-2 relative z-20 w-full px-1 pt-2">
+                {[
+                  { emoji: "💚", text: "Check in on my financial health" },
+                  { emoji: "🚨", text: "Help me feel safer about my emergency fund" },
+                  { emoji: "🎯", text: "Help me build a budget that feels doable" },
+                  { emoji: "💰", text: "Walk me through this cycle's cash flow" },
+                  { emoji: "💵", text: "Can I afford this without stress?", affordDialog: true },
+                  { emoji: "✈️", text: "Plan a vacation that feels doable" },
+                  { emoji: "🏦", text: "Build a gentle savings plan" },
+                ].map((item) => (
+                  <button
+                    key={item.text}
+                    onClick={() => item.affordDialog ? setShowAffordDialog(true) : setInputValue(item.text)}
+                    className="bg-surfaceVariant hover:bg-surface border border-surfaceBorder hover:border-primary/30 text-textMain rounded-2xl px-4 py-3 flex items-center gap-3 transition-all text-left group"
+                  >
+                    <span className="text-base shrink-0">{item.emoji}</span>
+                    <span className="font-heading text-xs font-medium leading-snug flex-1">{item.text}</span>
+                    <span className="text-textSub/30 group-hover:text-primary/60 transition-colors text-xs">→</span>
+                  </button>
+                ))}
               </div>
             )}
             <div ref={chatEndRef} />
@@ -963,9 +950,10 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-textMain mb-2 uppercase tracking-wide text-xs">Company</h4>
-            <a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#terms" className="hover:text-primary transition-colors">Terms of Service</a>
-            <a href="#support" className="hover:text-primary transition-colors">Support</a>
+            <a href="#/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#/terms" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#/support" className="hover:text-primary transition-colors">Support</a>
+            <a href="#/delete-account" className="hover:text-primary transition-colors">Delete Account</a>
           </div>
         </div>
 
@@ -994,10 +982,10 @@ const CookieConsentBanner = () => {
       <div className="max-w-4xl mx-auto bg-[#12141C]/95 backdrop-blur-xl border border-surfaceBorder rounded-2xl p-4 md:p-5 shadow-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div className="flex-1 font-heading text-sm text-textSub leading-relaxed">
           <span className="text-textMain font-semibold">This site uses essential cookies only.</span> We use no advertising or tracking cookies. The waitlist form sends your name and email to our secure list. See our{' '}
-          <a href="#privacy" className="text-primary hover:underline" onClick={() => setVisible(false)}>Privacy Policy</a> for full details.
+          <a href="#/privacy" className="text-primary hover:underline" onClick={() => setVisible(false)}>Privacy Policy</a> for full details.
         </div>
         <div className="flex gap-3 shrink-0">
-          <a href="#privacy" onClick={() => setVisible(false)} className="font-heading text-sm font-medium text-textSub hover:text-textMain transition-colors px-4 py-2 rounded-xl border border-surfaceBorder">
+          <a href="#/privacy" onClick={() => setVisible(false)} className="font-heading text-sm font-medium text-textSub hover:text-textMain transition-colors px-4 py-2 rounded-xl border border-surfaceBorder">
             Learn more
           </a>
           <button
@@ -1120,7 +1108,7 @@ const WaitlistModal = ({ onClose }) => {
                 />
               </div>
               <p className="font-heading text-xs text-textSub/60 leading-relaxed">
-                By joining, you agree to receive a one-time launch notification at this email. We will never spam you or share your email. See our <a href="#privacy" onClick={onClose} className="text-primary hover:underline">Privacy Policy</a>.
+                By joining, you agree to receive a one-time launch notification at this email. We will never spam you or share your email. See our <a href="#/privacy" onClick={onClose} className="text-primary hover:underline">Privacy Policy</a>.
               </p>
               <div className="flex gap-4 mt-2">
                 <button
@@ -1146,27 +1134,111 @@ const WaitlistModal = ({ onClose }) => {
   );
 }
 
+const DeleteAccountContent = () => (
+  <div className="space-y-2">
+    <p>You have the right to delete your WiseFlow account and all associated personal data at any time. This page explains how to submit a deletion request and what happens to your data.</p>
+
+    <LegalSectionHeading>How to request account deletion</LegalSectionHeading>
+    <p>Send an email to <a className="text-primary hover:underline font-semibold" href="mailto:contact@wiseflowapp.com?subject=Delete%20My%20Account">contact@wiseflowapp.com</a> with the subject line <span className="text-textMain font-semibold">"Delete My Account"</span> and include the email address associated with your WiseFlow account. We will process your request within 30 days and send you a confirmation once it is complete.</p>
+
+    <LegalSectionHeading>What gets deleted</LegalSectionHeading>
+    <p>Upon account deletion, we will delete or permanently de-identify the following data:<br />
+    — Your account profile (name, email address)<br />
+    — All transactions, wallets, budgets, goals, and financial records you entered<br />
+    — Your Wisey AI chat history<br />
+    — Your linked bank connection tokens (if any)<br />
+    — Push notification tokens and device identifiers<br />
+    — All app preferences and settings</p>
+
+    <LegalSectionHeading>Retention exceptions</LegalSectionHeading>
+    <p>Some data may be retained for a limited period after deletion where required by law or for legitimate security purposes:<br />
+    — Security, fraud, and compliance records: up to 180 days<br />
+    — Encrypted backup copies: up to 90 days before automatic removal<br />
+    — Anonymized, aggregated analytics data (cannot be tied back to you): indefinitely</p>
+
+    <LegalSectionHeading>Subscription cancellation</LegalSectionHeading>
+    <p>Deleting your account does not automatically cancel your Google Play subscription. Before requesting deletion, please cancel your subscription through the Google Play subscription manager on your device to avoid future charges.</p>
+
+    <LegalSectionHeading>Response time</LegalSectionHeading>
+    <p>We will acknowledge your request within 5 business days and complete the deletion within 30 days. If you have not received a confirmation after 30 days, please follow up at <a className="text-primary hover:underline" href="mailto:contact@wiseflowapp.com">contact@wiseflowapp.com</a>.</p>
+  </div>
+);
+
+const DeleteAccountPage = ({ onBack }) => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  return (
+    <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain">
+      <header className="sticky top-0 z-50 border-b border-surfaceBorder bg-background/95 backdrop-blur-xl">
+        <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="font-heading font-bold text-xl tracking-tight">
+            <span className="text-textMain">Wise</span><span className="text-primary">Flow</span>
+          </div>
+          <button onClick={onBack} className="font-heading text-sm font-medium text-textSub hover:text-textMain transition-colors flex items-center gap-1.5">
+            ← Back
+          </button>
+        </div>
+      </header>
+      <div className="max-w-3xl mx-auto px-6 pt-10 pb-24">
+        <div className="mb-8">
+          <h1 className="font-heading font-bold text-3xl md:text-4xl text-textMain mb-1">Delete Your Account</h1>
+          <p className="font-heading text-xs text-textSub">WiseFlow (Motomation) · contact@wiseflowapp.com</p>
+        </div>
+        <div className="font-heading text-textSub leading-relaxed text-sm">
+          <DeleteAccountContent />
+        </div>
+        <div className="mt-10">
+          <a
+            href="mailto:contact@wiseflowapp.com?subject=Delete%20My%20Account"
+            className="inline-flex items-center gap-2 bg-primary text-background px-6 py-3 rounded-full font-heading font-bold text-sm hover:scale-[1.03] transition-transform"
+          >
+            Request Account Deletion →
+          </a>
+        </div>
+        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow (Motomation) · contact@wiseflowapp.com</p>
+      </div>
+    </div>
+  );
+};
+
+const getPageFromHash = (hash) => {
+  if (hash === '#/privacy') return 'privacy';
+  if (hash === '#/terms') return 'terms';
+  if (hash === '#/support') return 'support';
+  if (hash === '#/delete-account') return 'delete-account';
+  return 'home';
+};
+
 function App() {
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
+  const [page, setPage] = useState(() => getPageFromHash(window.location.hash));
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
-    const hash = window.location.hash;
-    if (!hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      return;
-    }
-
-    requestAnimationFrame(() => {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ block: 'start' });
-      }
-    });
+    const handleHash = () => {
+      const p = getPageFromHash(window.location.hash);
+      setPage(p);
+      if (p === 'home') window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  const goHome = () => {
+    window.location.hash = '';
+    setPage('home');
+  };
+
+  if (page === 'delete-account') {
+    return <DeleteAccountPage onBack={goHome} />;
+  }
+
+  if (page === 'privacy' || page === 'terms' || page === 'support') {
+    return <LegalPage initialTab={page} onBack={goHome} />;
+  }
 
   return (
     <div className="bg-background min-h-screen text-textMain selection:bg-primary/30 selection:text-textMain overflow-x-hidden">
@@ -1177,7 +1249,6 @@ function App() {
       <AiWisey />
       <Pricing />
       <SecuritySection />
-      <LegalAndSupport />
       <Footer />
       {isWaitlistModalOpen && <WaitlistModal onClose={() => setIsWaitlistModalOpen(false)} />}
       <CookieConsentBanner />
