@@ -400,7 +400,7 @@ const TermsContent = () => (
   <p>You agree not to:<br />— Use the app for any unlawful purpose or in violation of these Terms.<br />— Attempt to reverse-engineer, copy, or reproduce any part of the app.<br />— Attempt to gain unauthorized access to other users&apos; accounts or our systems.<br />— Use the app to process or track financial activity related to fraud, money laundering, or other illegal conduct.<br />— Automate access to the app in ways not explicitly permitted.</p>
 
   <LegalSectionHeading>Intellectual property</LegalSectionHeading>
-  <p>WiseFlow, Wisey, and all associated designs, code, and content are owned by WiseFlow (Motomation). You may not copy, reproduce, or distribute any part of the app without written permission. You retain full ownership of the financial data you enter. By using the app, you grant us a limited license to process that data to provide the service to you.</p>
+  <p>WiseFlow, Wisey, and all associated designs, code, and content are owned by WiseFlow. You may not copy, reproduce, or distribute any part of the app without written permission. You retain full ownership of the financial data you enter. By using the app, you grant us a limited license to process that data to provide the service to you.</p>
 
   <LegalSectionHeading>No warranty</LegalSectionHeading>
   <p>WiseFlow is provided &quot;as-is&quot; and &quot;as available.&quot; We make no guarantees that the app will be error-free, always available, or perfectly accurate. We do our best, but we cannot promise uninterrupted service, and we are not responsible for decisions made based on data shown in the app.</p>
@@ -488,7 +488,7 @@ const LegalPage = ({ initialTab, onBack }) => {
           {activeTab === 'support' && <SupportContent />}
         </div>
 
-        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow (Motomation) · contact@wiseflowapp.com · May 2026</p>
+        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow Support · contact@wiseflowapp.com · June 2026</p>
       </div>
     </div>
   );
@@ -1181,7 +1181,7 @@ const DeleteAccountPage = ({ onBack }) => {
       <div className="max-w-3xl mx-auto px-6 pt-10 pb-24">
         <div className="mb-8">
           <h1 className="font-heading font-bold text-3xl md:text-4xl text-textMain mb-1">Delete Your Account</h1>
-          <p className="font-heading text-xs text-textSub">WiseFlow (Motomation) · contact@wiseflowapp.com</p>
+          <p className="font-heading text-xs text-textSub">WiseFlow Support · contact@wiseflowapp.com</p>
         </div>
         <div className="font-heading text-textSub leading-relaxed text-sm">
           <DeleteAccountContent />
@@ -1194,7 +1194,7 @@ const DeleteAccountPage = ({ onBack }) => {
             Request Account Deletion →
           </a>
         </div>
-        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow (Motomation) · contact@wiseflowapp.com</p>
+        <p className="font-heading text-xs text-textSub/40 mt-16 text-center">WiseFlow Support · contact@wiseflowapp.com</p>
       </div>
     </div>
   );
