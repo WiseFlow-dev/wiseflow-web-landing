@@ -34,18 +34,18 @@
 
 ## ⚡ Features & Performance Benchmarks
 
+| Lighthouse Performance | First Contentful Paint | UI Frame Rate |
+| :---: | :---: | :---: |
+| 💯 99 / 100 | 🚀 &lt; 120ms | ⚡ 60 FPS GSAP Motion |
+
 | Real-Time Financial Dashboard | Bank Integration & Analytics |
-| :---: | :---: |
+| :--- | :--- |
 | 📊 Multi-wallet balance aggregation | 💳 Plaid & TrueLayer transaction sync |
 | 📉 Interactive spending trend analytics | ⚡ GSAP-driven responsive animations |
 
-```
-┌─────────────────────────┬──────────────────────────┬────────────────────────┐
-│ Lighthouse Performance  │ First Contentful Paint   │ UI Frame Rate          │
-├─────────────────────────┼──────────────────────────┼────────────────────────┤
-│ 💯 99 / 100             │ 🚀 < 120ms               │ ⚡ 60 FPS GSAP Motion  │
-└─────────────────────────┴──────────────────────────┴────────────────────────┘
-```
+---
+
+## 🏗️ Architecture & Engineering
 
 - **Frontend Core**: React 18 with custom hook-driven state management.
 - **Micro-Animations**: GSAP timeline animations and scroll trigger interactions.
